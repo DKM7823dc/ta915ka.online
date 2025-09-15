@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إشارات الأسهم النخبة | الاستشارات الاستثمارية المهنية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy-900': '#0F172A',
+                        'navy-800': '#1E293B',
+                        'navy-700': '#334155',
+                        'gold-500': '#D97706',
+                        'gold-400': '#F59E0B',
+                        'blue-600': '#2563EB',
+                        'green-600': '#059669',
+                        'red-600': '#DC2626',
+                        'gray-300': '#D1D5DB',
+                        'gray-400': '#9CA3AF'
+                    },
+                    fontFamily: {
+                        'arabic': ['Noto Sans Arabic', 'sans-serif']
+                    }
+                }
+            }
+        }
+
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        function joinNow() {
+            window.open('https://www.qq.com', '_blank');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.join-btn').forEach(btn => {
+                btn.addEventListener('click', joinNow);
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
+            line-height: 1.6;
+        }
+
+        .professional-card {
+            background: linear-gradient(145deg, #1E293B, #334155);
+            border: 1px solid #475569;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
+        }
+
+        .feature-icon {
+            background: linear-gradient(135deg, #D97706, #F59E0B);
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .stat-card {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid #475569;
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial-card {
+            background: linear-gradient(145deg, #1E293B, #334155);
+            border: 1px solid #475569;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
+            color: #0F172A;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #B45309 0%, #D97706 100%);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid #475569;
+            color: #F1F5F9;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(51, 65, 85, 0.9);
+            border-color: #D97706;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* RTL Support */
+        [dir="rtl"] .flex {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .space-x-4 > * + * {
+            margin-left: 0;
+            margin-right: 1rem;
+        }
+        
+        [dir="rtl"] .space-x-6 > * + * {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+        }
+    </style>
+</head>
+<body class="text-white font-arabic">
+
+    <!-- Header -->
+    <header class="bg-navy-900/95 backdrop-blur-sm border-b border-navy-700">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-500 rounded-lg flex items-center justify-center">
+                        <span class="text-navy-900 font-bold text-sm">ES</span>
+                    </div>
+                    <h1 class="text-xl font-bold gradient-text">إشارات الأسهم النخبة</h1>
+                </div>
+                <button class="join-btn btn-primary px-6 py-2 rounded-lg">
+                    انضم الآن
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Content -->
+                <div class="space-y-8">
+                    <div>
+                        <h1 class="hero-title text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6">
+                            انضم إلى <span class="gradient-text">مجموعة إشارات الأسهم النخبة</span>
+                        </h1>
+                        <p class="text-xl md:text-2xl text-gray-300 leading-relaxed">
+                            حقق أحلامك الاستثمارية واتبع نبض السوق بسهولة!
+                        </p>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="stat-card p-4 rounded-xl text-center">
+                            <div class="text-2xl md:text-3xl font-bold text-gold-400 mb-1">+20,000</div>
+                            <div class="text-sm text-gray-400">مستخدم نشط</div>
+                        </div>
+                        <div class="stat-card p-4 rounded-xl text-center">
+                            <div class="text-2xl md:text-3xl font-bold text-green-600 mb-1">95%</div>
+                            <div class="text-sm text-gray-400">معدل النجاح</div>
+                        </div>
+                        <div class="stat-card p-4 rounded-xl text-center">
+                            <div class="text-2xl md:text-3xl font-bold text-blue-600 mb-1">24/7</div>
+                            <div class="text-sm text-gray-400">الدعم</div>
+                        </div>
+                    </div>
+
+                    <p class="text-lg text-gray-400 leading-relaxed">
+                        انضم إلى مجموعة إشارات التداول عبر الهاتف المحمول واحصل على التحليلات المهنية اليومية وخطط التداول. تعلم كيفية اتخاذ قرارات ذكية في سوق الأسهم وإنشاء مستقبل مزدهر معًا!
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="join-btn btn-primary px-8 py-4 rounded-xl text-lg">
+                            ابدأ رحلتك الآن
+                        </button>
+                        <button class="btn-secondary px-8 py-4 rounded-xl text-lg">
+                            تعرف على المزيد
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="professional-card p-6 rounded-2xl">
+                    <img src="img/1.jpg" 
+                         alt="إشارات التداول النخبة" 
+                         class="w-full h-auto rounded-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-6">
+                    حقق <span class="gradient-text">عوائد استثمارية مستقرة</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    هل تريد تحقيق عوائد قوية في سوق الأسهم؟ انضم إلى مجموعة إشارات التداول عبر الهاتف المحمول واحصل على تحليلات السوق اليومية وخطط التداول بسهولة.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Image -->
+                <div class="professional-card p-6 rounded-2xl">
+                    <img src="img/11.jpg" 
+                         alt="واجهة التداول" 
+                         class="w-full h-auto rounded-xl">
+                </div>
+
+                <!-- Steps -->
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-6 space-x-reverse">
+                        <div class="feature-icon">
+                            <span class="text-navy-900 font-bold text-xl">1</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-gold-400 mb-3">انضم إلى المجموعة</h3>
+                            <p class="text-gray-300 text-lg">تسجيل بسيط، احصل على أحدث الإشارات في أي وقت وأي مكان.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-6 space-x-reverse">
+                        <div class="feature-icon">
+                            <span class="text-navy-900 font-bold text-xl">2</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-blue-600 mb-3">اتبع خطة التداول</h3>
+                            <p class="text-gray-300 text-lg">تداول وفقًا للخطط المقدمة يوميًا من قبلنا.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-6 space-x-reverse">
+                        <div class="feature-icon">
+                            <span class="text-navy-900 font-bold text-xl">3</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-green-600 mb-3">راقب النتائج</h3>
+                            <p class="text-gray-300 text-lg">اشهد زيادة العوائد المحتملة، ولكن تذكر: الاستثمارات تنطوي على مخاطر.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 md:py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-6">
+                    ما يقوله <span class="gradient-text">أعضاء النخبة</span> لدينا
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-8 rounded-2xl">
+                    <div class="text-center">
+                        <img src="img/tx(11).png" 
+                             alt="محمد العلي" 
+                             class="w-20 h-20 mx-auto mb-4 rounded-full">
+                        <h4 class="font-bold text-xl text-gold-400 mb-2">محمد العلي</h4>
+                        <div class="text-gray-400 mb-4">متداول محترف</div>
+                        <p class="text-gray-300 leading-relaxed">
+                            "الإشارات دقيقة وحسنت محفظتي بشكل كبير. أنصح بها بشدة!"
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-2xl">
+                    <div class="text-center">
+                        <img src="img/tx(22).png" 
+                             alt="سارة أحمد" 
+                             class="w-20 h-20 mx-auto mb-4 rounded-full">
+                        <h4 class="font-bold text-xl text-blue-600 mb-2">سارة أحمد</h4>
+                        <div class="text-gray-400 mb-4">مستثمرة</div>
+                        <p class="text-gray-300 leading-relaxed">
+                            "أخيرًا أفهم الأسواق بشكل أفضل. التحليلات اليومية لا تقدر بثمن."
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-2xl">
+                    <div class="text-center">
+                        <img src="img/tx(33).png" 
+                             alt="عبدالله محمد" 
+                             class="w-20 h-20 mx-auto mb-4 rounded-full">
+                        <h4 class="font-bold text-xl text-green-600 mb-2">عبدالله محمد</h4>
+                        <div class="text-gray-400 mb-4">رجل أعمال</div>
+                        <p class="text-gray-300 leading-relaxed">
+                            "خدمة مهنية بنتائج ممتازة. راضٍ جداً عن دعم المجتمع!"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 md:py-20">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black mb-6">
+                هل ستكون <span class="gradient-text">عضو النخبة</span> التالي؟
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                انقر على الرابط أدناه وابدأ رحلة النخبة فورًا!
+            </p>
+            
+            <div class="professional-card p-8 md:p-12 rounded-3xl mb-8">
+                <div class="text-gold-400 text-2xl md:text-3xl font-bold mb-4">⚡ عرض حصري</div>
+                <div class="text-3xl md:text-4xl font-black mb-4">200 مقعد نخبة فقط متاح</div>
+                <div class="text-gray-300 text-xl">انضم إلى الدائرة الحصرية قبل فوات الأوان!</div>
+            </div>
+            
+            <button class="join-btn btn-primary px-12 md:px-16 py-6 rounded-xl text-xl md:text-2xl font-bold mb-6">
+                انضم إلى مجموعة الإشارات النخبة
+            </button>
+            
+            <p class="text-gray-400 text-sm">
+                تحذير من المخاطر: تداول الأدوات المالية ينطوي على مخاطر. النتائج السابقة لا تضمن أرباحًا مستقبلية.
+            </p>
+        </div>
+    </section>
+
+    <!-- Risk Warning -->
+    <section class="py-12 bg-red-600/10 border-t border-red-600/30">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="professional-card border-red-600/50 p-8 rounded-3xl">
+                <h3 class="text-2xl md:text-3xl font-black text-red-600 mb-6 text-center">⚠️ تحذير مهم من المخاطر</h3>
+                <div class="text-gray-300 space-y-4 leading-relaxed text-sm md:text-base text-right">
+                    <p><strong class="text-red-600">المخاطر العامة:</strong> تداول الأسهم والمشتقات والأدوات المالية الأخرى ينطوي على مخاطر كبيرة، بما في ذلك الخسارة الكاملة لرأس المال المستثمر.</p>
+                    
+                    <p><strong class="text-red-600">لا يُعتبر نصيحة استثمارية:</strong> المعلومات المقدمة لا تشكل نصيحة استثمارية ولا ينبغي استخدامها كأساس لاتخاذ قرارات الاستثمار.</p>
+                    
+                    <p><strong class="text-red-600">المسؤولية الشخصية:</strong> أنت تتداول على مسؤوليتك ومخاطرك الخاصة. استثمر فقط الأموال التي يمكنك تحمل خسارتها.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900/95 backdrop-blur-sm border-t border-navy-700 py-12">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div class="md:col-span-2 text-right">
+                    <h3 class="text-2xl md:text-3xl font-black gradient-text mb-4">إشارات الأسهم النخبة</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        شريكك الموثوق للتحليل المهني للأسهم وإشارات التداول في مجتمع الاستثمار النخبة.
+                    </p>
+                </div>
+                
+                <div class="text-right">
+                    <h4 class="font-bold mb-4 text-xl text-gold-400">قانوني</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="ys.html" class="hover:text-gold-400 transition-colors duration-300">سياسة الخصوصية</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors duration-300">شروط الخدمة</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors duration-300">بيانات الشركة</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors duration-300">الكشف عن المخاطر</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-navy-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 إشارات الأسهم النخبة. جميع الحقوق محفوظة.</p>
+                <p class="mt-3">
+                    <a href="ys.html" class="text-gold-400 hover:underline">سياسة الخصوصية</a> | 
+                    <a href="#" class="text-gold-400 hover:underline">شروط الخدمة</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
