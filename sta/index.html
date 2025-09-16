@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إشارات الأسهم النخبة | خدمات التحليل المالي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-blue': '#1E3A8A',
+                        'navy': '#1E40AF',
+                        'steel': '#475569',
+                        'charcoal': '#374151',
+                        'warm-gray': '#6B7280',
+                        'light-gray': '#F3F4F6',
+                        'gold': '#B45309',
+                        'dark-gold': '#92400E'
+                    },
+                    fontFamily: {
+                        'arabic': ['Noto Sans Arabic', 'sans-serif']
+                    }
+                }
+            }
+        }
+
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        function showModal() {
+            document.getElementById('contactModal').classList.remove('hidden');
+        }
+
+        function hideModal() {
+            document.getElementById('contactModal').classList.add('hidden');
+        }
+
+        function redirectToWhatsApp() {
+            window.open('https://www.qq.com', '_blank');
+            hideModal();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.join-btn').forEach(btn => {
+                btn.addEventListener('click', showModal);
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            background: linear-gradient(180deg, #1E3A8A 0%, #1E40AF 100%);
+            color: white;
+        }
+
+        .professional-section {
+            background: white;
+            color: #374151;
+        }
+
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .deep-shadow {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .btn-gold {
+            background: #B45309;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-gold:hover {
+            background: #92400E;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid #B45309;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-outline:hover {
+            background: #B45309;
+            color: white;
+        }
+
+        .feature-icon {
+            background: #B45309;
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-backdrop {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        /* RTL Support */
+        [dir="rtl"] .flex {
+            flex-direction: row-reverse;
+        }
+        
+        [dir="rtl"] .space-x-4 > * + * {
+            margin-left: 0;
+            margin-right: 1rem;
+        }
+        
+        [dir="rtl"] .space-x-6 > * + * {
+            margin-left: 0;
+            margin-right: 1.5rem;
+        }
+
+        [dir="rtl"] .space-x-8 > * + * {
+            margin-left: 0;
+            margin-right: 2rem;
+        }
+    </style>
+</head>
+<body class="font-arabic">
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="hidden fixed inset-0 z-50 modal-backdrop flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg shadow-2xl max-w-md w-full p-8 text-center">
+            <div class="mb-6">
+                <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span class="text-white text-2xl">📞</span>
+                </div>
+                <h3 class="text-2xl font-bold text-charcoal mb-2">تواصل معنا</h3>
+                <p class="text-warm-gray">
+                    您的名额即将锁定，添加WhatsApp，一起讨论。
+                </p>
+            </div>
+            
+            <div class="space-y-4">
+                <button onclick="redirectToWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                    إضافة WhatsApp
+                </button>
+                <button onclick="hideModal()" class="w-full bg-gray-300 hover:bg-gray-400 text-charcoal font-semibold py-3 px-6 rounded-lg transition-colors">
+                    إغلاق
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-dark-blue/95 backdrop-blur-sm border-b border-navy/50 fixed w-full z-40">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <div class="w-10 h-10 bg-gold rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold">ES</span>
+                    </div>
+                    <span class="text-xl font-bold text-white">إشارات الأسهم</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8 space-x-reverse">
+                    <a href="#features" class="nav-link">الخدمات</a>
+                    <a href="#testimonials" class="nav-link">الآراء</a>
+                    <a href="#cta" class="nav-link">التواصل</a>
+                </div>
+                <button class="join-btn btn-gold">
+                    استفسار
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="space-y-8">
+                    <div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                            خدمات <span class="text-yellow-400">التحليل المالي</span> الاحترافية
+                        </h1>
+                        <p class="text-xl md:text-2xl text-blue-100 leading-relaxed">
+                            نوفر خدمات استشارية في مجال الأسواق المالية والاستثمار
+                        </p>
+                    </div>
+
+                    <p class="text-lg text-blue-200 leading-relaxed">
+                        نحن نقدم خدمات التحليل الفني والأساسي للأسواق المالية. خدماتنا تشمل التحليل اليومي للأسواق وتقديم التوجيه الاستثماري. نؤكد أن جميع الاستثمارات تحمل مخاطر محتملة ولا نضمن أي أرباح.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="join-btn btn-gold px-8 py-4 text-lg">
+                            استفسار عن الخدمات
+                        </button>
+                        <button class="btn-outline px-8 py-4 text-lg">
+                            معرفة المزيد
+                        </button>
+                    </div>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6 pt-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-yellow-400 mb-1">خبرة</div>
+                            <div class="text-sm text-blue-200">سنوات متعددة</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-400 mb-1">تحليل</div>
+                            <div class="text-sm text-blue-200">يومي</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-400 mb-1">دعم</div>
+                            <div class="text-sm text-blue-200">مستمر</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 deep-shadow">
+                    <img src="img/1.jpg" 
+                         alt="خدمات التحليل المالي" 
+                         class="w-full h-auto rounded-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="professional-section py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-6">
+                    خدماتنا الاستشارية
+                </h2>
+                <p class="text-xl text-warm-gray max-w-3xl mx-auto">
+                    نقدم خدمات التحليل الفني والاستشاري في مجال الأسواق المالية. خدماتنا تعليمية وإرشادية ولا تشكل نصائح استثمارية مباشرة.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Features List -->
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-6 space-x-reverse">
+                        <div class="feature-icon">1</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-charcoal mb-3">التحليل الفني</h3>
+                            <p class="text-warm-gray text-lg leading-relaxed">
+                                نوفر تحليلات فنية للأسواق المالية لأغراض تعليمية ومعلوماتية.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-6 space-x-reverse">
+                        <div class="feature-icon">2</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-charcoal mb-3">التوجيه التعليمي</h3>
+                            <p class="text-warm-gray text-lg leading-relaxed">
+                                نقدم محتوى تعليمي حول أساسيات الاستثمار والتحليل المالي.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-6 space-x-reverse">
+                        <div class="feature-icon">3</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-charcoal mb-3">الدعم الاستشاري</h3>
+                            <p class="text-warm-gray text-lg leading-relaxed">
+                                نوفر إرشادات عامة حول السوق مع التأكيد على أهمية إجراء البحث الشخصي.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="bg-gray-50 rounded-2xl p-6 card-shadow">
+                    <img src="img/11.jpg" 
+                         alt="التحليل المالي" 
+                         class="w-full h-auto rounded-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 md:py-24 bg-steel/10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                    آراء العملاء
+                </h2>
+                <p class="text-xl text-blue-200">تجارب حقيقية مع خدماتنا الاستشارية</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-8 card-shadow">
+                    <div class="text-center">
+                        <img src="img/tx(11).png" 
+                             alt="عميل 1" 
+                             class="w-20 h-20 mx-auto rounded-full mb-4">
+                        <h4 class="font-bold text-xl text-charcoal mb-2">أحمد محمد</h4>
+                        <div class="text-warm-gray mb-6">مستثمر</div>
+                        <p class="text-charcoal leading-relaxed">
+                            "الخدمات الاستشارية مفيدة وتعليمية، ساعدتني في فهم السوق بشكل أفضل."
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 card-shadow">
+                    <div class="text-center">
+                        <img src="img/tx(22).png" 
+                             alt="عميل 2" 
+                             class="w-20 h-20 mx-auto rounded-full mb-4">
+                        <h4 class="font-bold text-xl text-charcoal mb-2">فاطمة علي</h4>
+                        <div class="text-warm-gray mb-6">مهتمة بالاستثمار</div>
+                        <p class="text-charcoal leading-relaxed">
+                            "المحتوى التعليمي مفيد جداً لفهم أساسيات التحليل المالي."
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl p-8 card-shadow">
+                    <div class="text-center">
+                        <img src="img/tx(33).png" 
+                             alt="عميل 3" 
+                             class="w-20 h-20 mx-auto rounded-full mb-4">
+                        <h4 class="font-bold text-xl text-charcoal mb-2">خالد أحمد</h4>
+                        <div class="text-warm-gray mb-6">متابع للأسواق</div>
+                        <p class="text-charcoal leading-relaxed">
+                            "الخدمة الاستشارية تقدم معلومات قيمة حول اتجاهات السوق."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="professional-section py-16 md:py-24">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-6">
+                هل تريد معرفة المزيد عن خدماتنا؟
+            </h2>
+            <p class="text-xl text-warm-gray mb-12">
+                تواصل معنا للحصول على معلومات إضافية حول خدماتنا الاستشارية
+            </p>
+            
+            <div class="bg-light-gray border border-gold/20 rounded-2xl p-8 mb-12">
+                <div class="text-gold text-2xl font-bold mb-4">📞 تواصل معنا</div>
+                <div class="text-3xl font-bold text-charcoal mb-4">استشارة مجانية</div>
+                <div class="text-warm-gray text-lg">احجز موعداً للاستفسار عن خدماتنا</div>
+            </div>
+            
+            <button class="join-btn btn-gold px-12 py-6 text-xl font-bold mb-8">
+                طلب استشارة
+            </button>
+            
+            <p class="text-warm-gray text-sm">
+                تنبيه: جميع خدماتنا استشارية وتعليمية فقط. الاستثمار في الأسواق المالية يحمل مخاطر.
+            </p>
+        </div>
+    </section>
+
+    <!-- Risk Warning -->
+    <section class="py-16 bg-red-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="bg-white border-r-4 border-red-500 rounded-lg p-8 deep-shadow">
+                <h3 class="text-2xl font-bold text-red-600 mb-6 text-center">⚠️ إخلاء مسؤولية مهم</h3>
+                <div class="grid md:grid-cols-2 gap-6 text-charcoal leading-relaxed">
+                    <div>
+                        <p class="mb-4"><strong class="text-red-600">طبيعة الخدمة:</strong> جميع خدماتنا استشارية وتعليمية فقط ولا تشكل نصائح استثمارية مباشرة.</p>
+                        <p class="mb-4"><strong class="text-red-600">المخاطر:</strong> الاستثمار في الأسواق المالية يحمل مخاطر قد تؤدي إلى خسائر مالية.</p>
+                        <p><strong class="text-red-600">المسؤولية:</strong> المستخدم يتحمل المسؤولية الكاملة عن قراراته الاستثمارية.</p>
+                    </div>
+                    <div>
+                        <p class="mb-4"><strong class="text-red-600">لا ضمانات:</strong> لا نقدم أي ضمانات حول النتائج المستقبلية أو الأرباح.</p>
+                        <p class="mb-4"><strong class="text-red-600">استشارة مهنية:</strong> ننصح بالحصول على استشارة مالية مستقلة قبل اتخاذ قرارات استثمارية.</p>
+                        <p><strong class="text-red-600">التقلبات:</strong> الأسواق المالية متقلبة وقد تتغير بسرعة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div class="md:col-span-2 text-right">
+                    <h3 class="text-2xl font-bold text-white mb-4">خدمات التحليل المالي</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        نقدم خدمات استشارية وتعليمية في مجال الأسواق المالية. جميع خدماتنا لأغراض تعليمية وإعلامية فقط.
+                    </p>
+                </div>
+                
+                <div class="text-right">
+                    <h4 class="font-bold mb-6 text-lg text-white">روابط مهمة</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">سياسة الخصوصية</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">شروط الخدمة</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">إخلاء المسؤولية</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">الكشف عن المخاطر</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 خدمات التحليل المالي. جميع الحقوق محفوظة.</p>
+                <div class="mt-4 space-x-6 space-x-reverse">
+                    <a href="#" class="text-gold hover:underline">سياسة الخصوصية</a>
+                    <a href="#" class="text-gold hover:underline">إخلاء المسؤولية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
